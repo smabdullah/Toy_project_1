@@ -21,3 +21,14 @@ y = dataset.iloc[:,5].values
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
+# Linear model
+from sklearn.linear_model import LinearRegression
+linear_regressor = LinearRegression()
+linear_regressor.fit(X_train, y_train)
+
+# Predict y
+y_pred = linear_regressor.predict(X_test)
+
+# 
+
+
