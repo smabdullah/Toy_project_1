@@ -29,6 +29,10 @@ linear_regressor.fit(X_train, y_train)
 # Predict y
 y_pred = linear_regressor.predict(X_test)
 
-# 
+# Confusion matrix
+from sklearn.metrics import explained_variance_score, r2_score, mean_squared_error
+variance_score = explained_variance_score(y_test, y_pred)
+R2 = r2_score(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
 
 
