@@ -17,3 +17,7 @@ X = dataset.iloc[:,:-1].values
 # target vector
 y = dataset.iloc[:,5].values
 
+# Spliting the dataset into trining_set and test_set
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+
