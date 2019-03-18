@@ -6,7 +6,7 @@ This dataset is collected from https://archive.ics.uci.edu/ml/datasets/Airfoil+S
 
 This is a regression problem. We start with the linear regression (OLS) and then try the decisiontree and random forest.
 
-The accuracies of using different matrics are follows
+The accuracies of using different matrics are presented in the following table.
 
 
 **Model**          |    **R^2**     |         **MSE**      
@@ -14,6 +14,8 @@ The accuracies of using different matrics are follows
 Linear (OLS)       | 0.5585         |  20.7651             
 Decision tree      | 0.8909         | 5.1321               
 Random forest      | 0.9279         | 3.3899               
+
+The visualisation of the generated decision tree can be found in the **decision-tree.pdf** file
 
 The current implementation does not consider k-fold cross validation and (hyper) parameter tunning. In the next run, I will use grid search to do cross validation and paramter tunning.
 
