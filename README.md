@@ -1,4 +1,4 @@
-**Sound pressure level prediction**
+#Sound pressure level prediction
 
 This project works with the NASA dataset which contains various wind tunnel speeds and angles of attack. It predicts the sound pressure level.
 
