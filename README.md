@@ -10,7 +10,7 @@ The accuracies of using different matrics are follows
 
 
 **Model**          |    **R^2**     |         **MSE**      
------------------------------------------------------------
+-------------------|----------------|----------------
 Linear (OLS)       | 0.5585         |  20.7651             
 Decision tree      | 0.8909         | 5.1321               
 Random forest      | 0.9279         | 3.3899               
