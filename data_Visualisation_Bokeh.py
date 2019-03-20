@@ -21,8 +21,6 @@ y = dataset.iloc[:,5].values
 from sklearn.preprocessing import StandardScaler
 sc_x = StandardScaler()
 X = sc_x.fit_transform(X)
-sc_y = StandardScaler()
-y = sc_y.fit_transform(y.reshape(-1,1))
 
 # Visualise some data
 p = figure(plot_width = 800, x_axis_label = 'Features',
