@@ -7,6 +7,7 @@ Created on Wed Mar 20 13:21:10 2019
 # Importing library
 import pandas as pd
 import numpy as np
+from bokeh.layouts import gridplot # for plotting subfigures
 from bokeh.plotting import figure, output_file, save
 
 # Read data
@@ -22,13 +23,25 @@ from sklearn.preprocessing import StandardScaler
 sc_x = StandardScaler()
 X = sc_x.fit_transform(X)
 
-# Visualise some data
-p = figure(plot_width = 800, x_axis_label = 'Features',
-           y_axis_label = 'sound pressure level')
-p.circle(X[:,0], y, size = 10, fill_color = 'red', fill_alpha = 0.5)
-p.circle(X[:,1], y, size = 15, fill_color = 'blue', fill_alpha = 0.3)
-p.circle_cross(X[:,2], y, size = 20, fill_color = 'lightblue', fill_alpha = 0.3)
-p.circle_x(X[:,3], y, size = 20, fill_color = 'maroon', fill_alpha = 0.8)
-p.diamond(X[:,4], y, size = 20, fill_color = 'coral', fill_alpha = 0.1)
-output_file('out_1.html', title = 'Feature vs sound pressure', mode = 'inline')
+# Visualise data using multiple 1-D plot
+output_file('Data_visualisation.html')
+
+p1 = figure(width=250, height=250, title = 'Frequency vs sound pressure')
+p1.circle(X[:,0], y, size = 10, color = 'indigo', alpha = 0.5)
+
+p2 = figure(width=250, height=250, title = 'Angle of attack vs sound pressure')
+p2.diamond(X[:,1], y, size = 10, color = 'navy', alpha = 0.5)
+
+p3 = figure(width=250, height=250, title = 'chord length vs sound pressure')
+p3.square(X[:,2], y, size = 10, color = 'firebrick', alpha = 0.5)
+
+p4 = figure(width=250, height=250, title = 'Free-stream velocity vs sound pressure')
+p4.triangle(X[:,3], y, size = 10, color = 'olive', alpha = 0.5)
+
+p5 = figure(width=250, height=250, title = 'suction thickness vs sound pressure')
+p5.circle_x(X[:,4], y, size = 10, color = 'sandybrown', alpha = 0.5)
+
+# put all the sub-plots in a gridplot
+p = gridplot([[p1, p2, p3, p4, p5]])
+
 save(p)
